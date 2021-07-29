@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+
+    app:cardCornerRadius="8dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="wrap_content">
+        <ImageView
+
+            android:id="@+id/news_item_iv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/news_item_tv"
+            android:text="Title"
+            android:layout_below="@+id/news_item_iv"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:maxLines="2"
+            android:layout_margin="3dp"
+            android:textColor="@color/white"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <TextView
+            android:id="@+id/news_item_datetv"
+            android:text="22-03-2021"
+            android:layout_below="@+id/news_item_tv"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:layout_margin="3dp"
+            android:padding="3dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+        </TextView>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
