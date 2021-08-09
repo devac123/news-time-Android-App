@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.improgrammer.retrofitapi.adapters.CategoryRVadapter;
 import com.improgrammer.retrofitapi.adapters.NewsRvAdapter;
 import com.improgrammer.retrofitapi.interfaces.RetrofitApi;
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements CategoryRVadapter
      NewsRvAdapter newsRvAdapter;
      ProgressBar progressBar;
      SwipeRefreshLayout swipeRefreshLayout;
-
      ArrayList<Articles> articles_items;
      ArrayList<CategoryRVmodal> categoryRVmodalArrayList;
      ArrayList<NewsModal> newsModalArrayList;
@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements CategoryRVadapter
         newsitem_list = findViewById(R.id.news_item_list);
         progressBar = findViewById(R.id.progressBar);
         swipeRefreshLayout = findViewById(R.id.latest_update);
+
+
+
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -87,9 +90,7 @@ public class MainActivity extends AppCompatActivity implements CategoryRVadapter
     }
 
     private void getNews(String category){
-        articles_items.clear();
         progressBar.setVisibility(View.VISIBLE);
-
         @SuppressLint("SimpleDateFormat") DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
 
@@ -131,7 +132,6 @@ public class MainActivity extends AppCompatActivity implements CategoryRVadapter
 
                 }
 
-
               newsRvAdapter = new NewsRvAdapter(getApplicationContext(),articlesArr);
                 newsitem_list.setAdapter(newsRvAdapter);
             }
@@ -146,7 +146,10 @@ public class MainActivity extends AppCompatActivity implements CategoryRVadapter
     @Override
     public void onCategoryClick(int postion) {
         String Category  = categoryRVmodalArrayList.get(postion).getCategory();
-        getNews(Category);
+        articles_items.clear();
+         getNews(Category);
+
+
     }
 
     @Override

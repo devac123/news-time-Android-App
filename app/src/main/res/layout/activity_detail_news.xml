@@ -7,13 +7,20 @@
     android:background="#000000"
     tools:context=".Detail_news">
 
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/app_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <ImageView
+        android:layout_marginTop="15dp"
         android:id="@+id/detail_news_iv"
         android:layout_width="match_parent"
         android:layout_height="200dp"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar1"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <TextView
